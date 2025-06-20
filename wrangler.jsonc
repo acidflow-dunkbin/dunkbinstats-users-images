@@ -5,6 +5,9 @@
     "enabled": true,
     "head_sampling_rate": 1
   },
+  "triggers": {
+    "crons": ["0 */3 * * *"]
+  },
   "assets": {
     "directory": "./public"
   },
