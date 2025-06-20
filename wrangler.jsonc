@@ -1,0 +1,17 @@
+{
+  "name": "dunkbinstats-users-images",
+  "compatibility_date": "2025-06-20",
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "assets": {
+    "directory": "./public"
+  },
+  "routes": [
+    {
+      "pattern": "dunkbinstats-users-images.acidflow.stream",
+      "custom_domain": true
+    }
+  ]
+}
