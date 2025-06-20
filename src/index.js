@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import crypto from "crypto";
 import dotenv from "dotenv";
+import JSZip from "jszip";
 
 dotenv.config();
 
@@ -57,6 +58,17 @@ function savePfpMapping(userPfpMap) {
     console.error("Failed to save PFP mapping:", error.message);
   }
 }
+
+const zip = new JSZip();
+zip.file("backpacks.json", fs.readFileSync(pfpMappingFile));
+const zipContent = await zip.generateAsync({
+  type: "nodebuffer",
+  compression: "DEFLATE",
+  compressionOptions: { level: 9 },
+});
+
+fs.writeFileSync("./src/data/pfp_map.zip", zipContent);
+fs.unlinkSync(pfpMappingFile);
 
 async function fetchData(url) {
   const maxRetries = 3;
