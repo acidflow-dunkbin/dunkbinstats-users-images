@@ -67,7 +67,7 @@ const zipContent = await zip.generateAsync({
   compressionOptions: { level: 9 },
 });
 
-fs.writeFileSync("./src/data/pfp_map.zip", zipContent);
+fs.writeFileSync("./public/pfp_map.zip", zipContent);
 fs.unlinkSync(pfpMappingFile);
 
 async function fetchData(url) {
