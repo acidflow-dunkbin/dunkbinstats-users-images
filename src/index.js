@@ -60,7 +60,7 @@ function savePfpMapping(userPfpMap) {
 }
 
 const zip = new JSZip();
-zip.file("backpacks.json", fs.readFileSync(pfpMappingFile));
+zip.file("pfp_map.json", fs.readFileSync(pfpMappingFile));
 const zipContent = await zip.generateAsync({
   type: "nodebuffer",
   compression: "DEFLATE",
