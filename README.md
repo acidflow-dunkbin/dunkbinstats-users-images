@@ -1,3 +1,3 @@
 # dunkbinstats-users-images
 
-Dunkbin users' pfps
+Dunkbin users' profile pictures from their twitch user accounts.
